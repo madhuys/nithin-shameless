@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Most Shameless Salesman on Earth · a Nithin Mathur storybook</title>
+<meta name="description" content="A loving roast in fifteen pictures. Every event is invented for comedy.">
+<meta property="og:title" content="The Most Shameless Salesman on Earth">
+<meta property="og:description" content="A Nithin Mathur storybook and film. A loving roast; every event is invented.">
+<meta property="og:image" content="img/15-title.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=DM+Sans:ital,wght@0,400;0,600;0,800;1,400&family=Fraunces:ital,opsz,wght@1,9..144,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --mustard:#d9a531;--teal:#2f7f7a;--coral:#e0644e;--cream:#f4ead2;--paper:#faf3e1;
+  --choc:#3b2418;--ink:#22160f;
+  --bookW:min(92vw,1180px);--pageH:calc(var(--bookW)/2*0.78);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--teal);color:var(--ink);font-family:"DM Sans",system-ui,sans-serif;overflow-x:hidden}
+/* halftone backdrop */
+body::before{content:"";position:fixed;inset:0;z-index:-1;
+  background:radial-gradient(circle,rgba(0,0,0,.13) 1.4px,transparent 1.6px) 0 0/14px 14px,
+             radial-gradient(ellipse at 30% 20%,#3a9690,var(--teal) 60%,#1f5a56)}
+a{color:inherit}
+
+/* ---------- hero ---------- */
+header{min-height:100svh;display:grid;place-items:center;padding:6vh 5vw 4vh;position:relative}
+.hero{display:grid;grid-template-columns:1.05fr 1fr;gap:4vw;align-items:center;max-width:1240px}
+.badge{display:inline-block;background:var(--coral);color:var(--cream);font-weight:800;letter-spacing:.18em;
+  font-size:.78rem;padding:.5em 1em;border:3px solid var(--ink);transform:rotate(-3deg);box-shadow:4px 4px 0 var(--ink)}
+h1{font-family:"Abril Fatface",serif;color:var(--cream);font-size:clamp(2.6rem,6.2vw,5.6rem);line-height:.95;
+  margin:.35em 0 .25em;text-shadow:4px 4px 0 var(--ink),-1px -1px 0 var(--ink)}
+h1 em{font-style:normal;color:var(--mustard)}
+.sub{font-family:"Fraunces",serif;font-style:italic;color:var(--cream);font-size:clamp(1.05rem,1.6vw,1.35rem);max-width:30ch;opacity:.95}
+.cta{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem}
+.btn{font:800 1rem "DM Sans";letter-spacing:.06em;text-transform:uppercase;text-decoration:none;cursor:pointer;
+  background:var(--mustard);color:var(--ink);border:3px solid var(--ink);padding:.85em 1.4em;box-shadow:5px 5px 0 var(--ink);
+  transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--ink)}
+.btn:active{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--ink)}
+.btn.alt{background:var(--cream)}
+.hero-art{position:relative;transform:rotate(2deg)}
+.hero-art img{width:100%;display:block;border:6px solid var(--cream);outline:3px solid var(--ink);box-shadow:14px 14px 0 var(--ink)}
+.hero-art .sticker{position:absolute;right:-18px;top:-26px;width:118px;height:118px;border-radius:50%;
+  background:var(--coral);color:var(--cream);border:3px solid var(--ink);display:grid;place-items:center;text-align:center;
+  font:800 .8rem/1.05 "DM Sans";letter-spacing:.04em;transform:rotate(12deg);box-shadow:4px 4px 0 var(--ink)}
+.hero-art .sticker b{font:1.6rem "Abril Fatface";display:block}
+.scroll-hint{position:absolute;bottom:2.2vh;left:50%;transform:translateX(-50%);color:var(--cream);font-size:.8rem;
+  letter-spacing:.2em;text-transform:uppercase;opacity:.8}
+
+/* ---------- book ---------- */
+section{padding:9vh 4vw}
+.sec-title{font-family:"Abril Fatface";color:var(--cream);font-size:clamp(2rem,4vw,3.2rem);text-align:center;
+  text-shadow:3px 3px 0 var(--ink)}
+.sec-sub{text-align:center;color:var(--cream);opacity:.85;margin:.5em auto 4vh;max-width:56ch}
+.stage{perspective:2600px;display:flex;justify-content:center}
+.book{position:relative;width:var(--bookW);height:var(--pageH);transform-style:preserve-3d;transition:transform .9s cubic-bezier(.6,.1,.25,1)}
+.book.closed{transform:translateX(-25%)}
+.book.ended{transform:translateX(25%)}
+.leaf{position:absolute;left:50%;top:0;width:50%;height:100%;transform-origin:left center;transform-style:preserve-3d;
+  transition:transform 1.05s cubic-bezier(.55,.05,.3,1)}
+.leaf.turned{transform:rotateY(-180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:hidden;background:var(--paper)}
+.face.back{transform:rotateY(180deg)}
+.face::after{content:"";position:absolute;inset:0;pointer-events:none}
+.front::after{background:linear-gradient(90deg,rgba(0,0,0,.22),rgba(0,0,0,0) 9%)}
+.back::after{background:linear-gradient(270deg,rgba(0,0,0,.22),rgba(0,0,0,0) 9%)}
+.book::before{content:"";position:absolute;inset:-14px -14px -14px -14px;background:var(--choc);border-radius:6px;
+  transform:translateZ(-2px);box-shadow:0 30px 60px rgba(0,0,0,.45);border:3px solid var(--ink)}
+.book.closed::before{left:50%}
+.book.ended::before{right:50%}
+
+/* pages */
+.pic img{width:100%;height:100%;object-fit:cover;display:block}
+.pic .num{position:absolute;left:14px;bottom:12px;background:var(--cream);border:2px solid var(--ink);
+  font:800 .75rem "DM Sans";padding:.3em .6em;letter-spacing:.1em;z-index:2}
+.text{padding:clamp(18px,4.2%,54px) clamp(20px,6%,64px);display:flex;flex-direction:column;justify-content:center;
+  background:radial-gradient(circle,rgba(59,36,24,.07) 1px,transparent 1.3px) 0 0/9px 9px,var(--paper)}
+.text .kicker{font:800 clamp(.6rem,.9vw,.78rem) "DM Sans";letter-spacing:.22em;text-transform:uppercase;color:var(--coral)}
+.text h3{font-family:"Abril Fatface";font-size:clamp(1.2rem,2.5vw,2.3rem);line-height:1.02;margin:.3em 0 .5em;color:var(--choc)}
+.text p{font-family:"Fraunces",serif;font-style:italic;font-size:clamp(.82rem,1.32vw,1.18rem);line-height:1.5;color:var(--ink)}
+.text p::first-letter{font-family:"Abril Fatface";font-style:normal;font-size:2.6em;float:left;line-height:.82;
+  margin:.06em .1em 0 0;color:var(--teal)}
+.play{margin-top:1.3em;align-self:flex-start;display:inline-flex;align-items:center;gap:.5em;cursor:pointer;
+  font:800 clamp(.62rem,.85vw,.78rem) "DM Sans";letter-spacing:.12em;text-transform:uppercase;background:var(--mustard);
+  border:2px solid var(--ink);padding:.55em .9em;box-shadow:3px 3px 0 var(--ink)}
+.play[aria-pressed="true"]{background:var(--coral);color:var(--cream)}
+.folio{position:absolute;bottom:10px;right:18px;font:600 .72rem "DM Sans";color:var(--choc);opacity:.6}
+.cover{background:var(--choc);color:var(--cream);display:flex;flex-direction:column;justify-content:space-between;
+  padding:7% 8%;border-left:10px solid #2a180f}
+.cover img{width:100%;aspect-ratio:16/9;object-fit:cover;border:4px solid var(--cream);outline:2px solid var(--ink)}
+.cover h2{font-family:"Abril Fatface";font-size:clamp(1.3rem,2.7vw,2.6rem);line-height:.98;color:var(--mustard)}
+.cover small{font:800 .72rem "DM Sans";letter-spacing:.24em;text-transform:uppercase;opacity:.85}
+.endpaper{background:var(--teal);color:var(--cream);display:grid;place-items:center;text-align:center;padding:10%}
+.endpaper h3{font-family:"Abril Fatface";font-size:clamp(1.4rem,3vw,2.6rem);color:var(--mustard);text-shadow:2px 2px 0 var(--ink)}
+.endpaper p{font-family:"Fraunces";font-style:italic;margin-top:.8em;font-size:clamp(.85rem,1.3vw,1.1rem)}
+.backcover{background:var(--choc);color:var(--cream);display:grid;place-items:center;text-align:center;padding:10%}
+.backcover p{font-family:"Fraunces";font-style:italic;font-size:clamp(.8rem,1.2vw,1rem);opacity:.85;max-width:30ch}
+
+.controls{display:flex;justify-content:center;align-items:center;gap:1.2rem;margin-top:5vh;color:var(--cream)}
+.controls .btn{padding:.6em 1.1em}
+#pageLabel{font:800 .9rem "DM Sans";letter-spacing:.14em;min-width:11ch;text-align:center}
+.hint{text-align:center;color:var(--cream);opacity:.7;font-size:.8rem;margin-top:1.2rem}
+
+/* ---------- film ---------- */
+.film-wrap{max-width:1100px;margin:0 auto;border:6px solid var(--cream);outline:3px solid var(--ink);box-shadow:16px 16px 0 var(--ink);background:#000}
+.film-wrap video{width:100%;display:block}
+footer{padding:6vh 5vw 8vh;text-align:center;color:var(--cream);font-size:.85rem;opacity:.85;line-height:1.7}
+footer b{color:var(--mustard)}
+
+/* ---------- mobile: book becomes a stack of cards ---------- */
+@media (max-width:820px){
+  .hero{grid-template-columns:1fr}
+  .hero-art{order:-1;margin:0 3vw}
+  .hero-art .sticker{width:92px;height:92px;right:-6px;top:-20px}
+  .stage,.controls,.hint{display:none}
+  .cards{display:grid!important;gap:7vh}
+}
+.cards{display:none;max-width:560px;margin:0 auto}
+.card{background:var(--paper);border:3px solid var(--ink);box-shadow:8px 8px 0 var(--ink)}
+.card img{width:100%;display:block;border-bottom:3px solid var(--ink)}
+.card .text{padding:22px 22px 26px}
+.card .text h3{font-size:1.7rem}
+.card .text p{font-size:1.05rem}
+@media (prefers-reduced-motion:reduce){.leaf,.book{transition:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="hero">
+    <div>
+      <span class="badge">A LOVING ROAST · IN 15 PICTURES</span>
+      <h1>The Most <em>Shameless</em> Salesman on Earth</h1>
+      <p class="sub">Nithin Mathur, Account Executive at Salesforce, has never once taken no for an answer. This is his story, lovingly made up from start to finish.</p>
+      <div class="cta">
+        <a class="btn" href="#book">Open the book</a>
+        <a class="btn alt" href="#film">Watch the film · 3 min</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <img src="img/01-night.jpg" alt="Nithin in a brown blazer, grinning, slipping a business card into a passer-by's pocket on a Singapore street at night">
+      <div class="sticker"><span><b>100%</b>ROI ON<br>SHAME</span></div>
+    </div>
+  </div>
+  <div class="scroll-hint">scroll ↓</div>
+</header>
+
+<section id="book">
+  <h2 class="sec-title">The Storybook</h2>
+  <p class="sec-sub">Turn the pages with the arrows, a swipe or a click on either page. Press ▶ on any page to hear it read aloud.</p>
+  <div class="stage"><div class="book closed" id="book3d"></div></div>
+  <div class="controls">
+    <button class="btn alt" id="prev" aria-label="Previous page">←</button>
+    <span id="pageLabel">COVER</span>
+    <button class="btn" id="next" aria-label="Next page">→</button>
+  </div>
+  <p class="hint">Keyboard: ← → to turn · space to read the page aloud</p>
+  <div class="cards" id="cards"></div>
+</section>
+
+<section id="film">
+  <h2 class="sec-title">The Film</h2>
+  <p class="sec-sub">Three minutes, narrated like a nature documentary about a very rare predator.</p>
+  <div class="film-wrap">
+    <video controls preload="metadata" playsinline poster="img/poster.jpg">
+      <source src="film.mp4" type="video/mp4">
+    </video>
+  </div>
+</section>
+
+<footer>
+  <b>Every event in this book is invented for comedy.</b> Nithin is very nice in real life. Mostly.<br>
+  Illustrations: Google Gemini 3 Pro Image · Animation: xAI Grok Imagine · Voice: ElevenLabs (George) · Music: ElevenLabs Music<br>
+  Made with FUOS.
+</footer>
+
+<script>
+const PAGES = [
+ ["01-night","Night Shift","Singapore. Night. A warm breeze. And somewhere in this crowd, a man is already selling you something. Meet Nithin Mathur. Account Executive. Salesforce. The most shameless salesman on Earth."],
+ ["02-baby","Born Closing","He was born at 4:02 in the morning. By 4:05 he had pitched the maternity nurse a premium swaddle subscription. Annual billing. Two months free."],
+ ["03-school","Extended Warranty","At school he sold his teacher an extended warranty on her own homework. She signed. Nobody knows why."],
+ ["04-lift","Ground to Twelve","On his first day at Salesforce he cornered a vice president in the lift. Ground floor to the twelfth. The VP stepped out having bought a licence to his own product."],
+ ["05-no","Forty-Seven Nos","To most people, “no” means no. To Nithin, “no” is short for “not yet, tell me more.” Forty-seven rejections in one week. He logged every single one as “nurturing.”"],
+ ["06-hawker","Chicken Rice, Upsold","At the hawker centre he did not order chicken rice. He closed the uncle on a queue-management dashboard. The uncle now has a pipeline. And forecasts. And quarterly business reviews."],
+ ["07-plane","Slide Nine","On a flight to Bangalore he upgraded himself to business class. Not with miles. With a twelve-slide deck, presented to the cabin crew. Slide nine had a pie chart."],
+ ["08-dentist","Open Wide","At the dentist, mouth wide open, he still ran a live demo. The dentist bought three seats. Nithin got a discount on the cleaning. Of course he did."],
+ ["09-wedding","Something Borrowed","At a friend's wedding he caught the bouquet. Then he sold it back to the bride. With a loyalty programme."],
+ ["10-beach","Out of Office","He once took a holiday. Bali. Four days. He came home with eleven qualified leads, a partnership with the surf school, and no tan."],
+ ["11-mum","Sunday, Recurring","His mother calls on Sundays. He books it as a recurring meeting. Agenda: wellness check, upsell opportunity. She is on the premium tier now."],
+ ["12-moon","One Giant Leap","One day, and he is very sure about this, he will be the first man to sell a cloud on the Moon. There is no air up there. There is, however, budget."],
+ ["13-heart","Off the Leaderboard","But here is what never makes the leaderboard. He shows up. He remembers your kid's name. He will stay till midnight to fix your deck, and then pitch you a better one."],
+ ["14-toast","Just Say Yes","So if a grinning man in a brown blazer raises a glass in your direction, just say yes. You were always going to."],
+ ["15-title","Quota: The World","Nithin Mathur. Shameless. Relentless. Quota: the entire world."]
+];
+const N = PAGES.length;
+const book = document.getElementById('book3d');
+const audio = new Audio(); let playingBtn = null;
+
+function textPage(i){
+  const [k,t,p] = PAGES[i];
+  return `<div class="face front text"><span class="kicker">Chapter ${i+1}</span><h3>${t}</h3><p>${p}</p>
+    <button class="play" data-k="${k}" aria-pressed="false">▶ Read it to me</button><span class="folio">${2*i+2}</span></div>`;
+}
+function picPage(i){
+  const [k,t] = PAGES[i];
+  return `<div class="face back pic"><img src="img/${k}.jpg" alt="${t}" loading="${i<2?'eager':'lazy'}"><span class="num">${String(i+1).padStart(2,'0')} / ${N}</span></div>`;
+}
+// leaf 0: cover / pic 1; leaf j (1..N-1): text j / pic j+1; leaf N: text N / endpaper; leaf N+1: back cover
+let html = `<div class="leaf"><div class="face front cover"><small>A Nithin Mathur Story</small>
+   <img src="img/15-title.jpg" alt=""><h2>The Most Shameless Salesman on Earth</h2><small>Fifteen pictures · one man · zero shame</small></div>${picPage(0)}</div>`;
+for(let j=1;j<N;j++) html += `<div class="leaf">${textPage(j-1)}${picPage(j)}</div>`;
+html += `<div class="leaf">${textPage(N-1)}<div class="face back endpaper"><div><h3>The End.</h3><p>(He has already sent you a follow-up email.)</p></div></div></div>`;
+html += `<div class="leaf"><div class="face front backcover"><p>No salespeople were harmed in the making of this book. Several were out-sold.</p></div><div class="face back backcover"></div></div>`;
+book.innerHTML = html;
+const leaves = [...book.querySelectorAll('.leaf')];
+const L = leaves.length;
+let cur = 0; // number of turned leaves
+function render(){
+  leaves.forEach((lf,i)=>{
+    lf.classList.toggle('turned', i<cur);
+    lf.style.zIndex = i<cur ? i+1 : L-i;
+  });
+  book.classList.toggle('closed', cur===0);
+  book.classList.toggle('ended', cur===L);
+  document.getElementById('pageLabel').textContent =
+    cur===0 ? 'COVER' : cur===L ? 'BACK COVER' : cur>N ? 'THE END' : `CHAPTER ${cur} / ${N}`;
+  stopAudio();
+}
+function go(d){ cur = Math.max(0, Math.min(L, cur+d)); render(); }
+document.getElementById('next').onclick=()=>go(1);
+document.getElementById('prev').onclick=()=>go(-1);
+book.addEventListener('click',e=>{
+  if(e.target.closest('.play')) return;
+  const r = book.getBoundingClientRect();
+  go(e.clientX > r.left + r.width/2 ? 1 : -1);
+});
+document.addEventListener('keydown',e=>{
+  const r=book.getBoundingClientRect(); if(r.bottom<0||r.top>innerHeight) return;
+  if(e.key==='ArrowRight') go(1);
+  if(e.key==='ArrowLeft') go(-1);
+  if(e.key===' ' && cur>=1 && cur<=N){ e.preventDefault(); const b=leaves[cur].querySelector('.play'); b && b.click(); }
+});
+let tx=null;
+book.addEventListener('touchstart',e=>tx=e.touches[0].clientX,{passive:true});
+book.addEventListener('touchend',e=>{ if(tx===null) return; const dx=e.changedTouches[0].clientX-tx; if(Math.abs(dx)>40) go(dx<0?1:-1); tx=null;});
+
+function stopAudio(){ audio.pause(); if(playingBtn){playingBtn.setAttribute('aria-pressed','false'); playingBtn.textContent='▶ Read it to me'; playingBtn=null;} }
+document.addEventListener('click',e=>{
+  const b = e.target.closest('.play'); if(!b) return;
+  e.stopPropagation();
+  if(playingBtn===b){ stopAudio(); return; }
+  stopAudio();
+  audio.src = `audio/${b.dataset.k}.mp3`; audio.play();
+  playingBtn=b; b.setAttribute('aria-pressed','true'); b.textContent='❚❚ Reading…';
+});
+audio.onended = stopAudio;
+
+// mobile cards
+document.getElementById('cards').innerHTML = PAGES.map(([k,t,p],i)=>
+  `<article class="card"><img src="img/${k}.jpg" alt="${t}" loading="lazy"><div class="text"><span class="kicker">Chapter ${i+1}</span><h3>${t}</h3><p>${p}</p>
+   <button class="play" data-k="${k}" aria-pressed="false">▶ Read it to me</button></div></article>`).join('');
+render();
+</script>
+</body>
+</html>
